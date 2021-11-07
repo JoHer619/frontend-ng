@@ -1,0 +1,108 @@
+<div class="container">
+  <mat-toolbar>
+    <span>Empleados</span>
+
+    <div class="example-spacer"></div>
+      <button type="button" (click)="Limpiar()" mat-raised-button  color="primary"  data-bs-toggle="modal"  data-bs-target="#exampleModal" >Agregar</button>
+
+
+  </mat-toolbar>
+  <br>
+  <div class="mat-elevation-z3">
+    <table class="table">
+      <thead class="table-block">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Primer nombre</th>
+            <th scope="col">Segundo nombre</th>
+            <th scope="col">Primer apellido</th>
+            <th scope="col">Segundo apellido</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Id direccion</th>
+            <th scope="col">Id sucursal</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of consulta">
+            <td>{{item.id}}</td>
+            <td>{{item.primer_nombre}}</td>
+            <td>{{item.segundo_nombre}}</td>
+            <td>{{item.primer_apellido}}</td>
+            <td>{{item.segundo_apellido}}</td>
+            <td>{{item.genero}}</td>
+            <td>{{item.f_nacimiento}}</td>
+            <td>{{item.direcId}}</td>
+            <td>{{item.sucurId}}</td>
+
+            <td>
+              <button (click)="ListEmpleados(item)"   type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-secondary data-bs-target="#exampleModal>Update</button>
+              <button (click)="deleteEmpleados(item)" class="btn btn-danger  mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+
+      <!-- Modal -->
+      <div class="mat-elevation-z8">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Empleados</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form [formGroup]="form">
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Primer nombre</label>
+                        <input type="text" formControlName="primer_nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Segundo nombre</label>
+                        <input type="text" formControlName="segundo_nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Primer apellido</label>
+                        <input type="text" formControlName="primer_apellido" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Segundo apellido</label>
+                        <input type="text" formControlName="segundo_apellido" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Genero</label>
+                        <input type="text" formControlName="genero" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento</label>
+                        <input type="text" formControlName="f_nacimiento" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Id direccion</label>
+                        <input type="text" formControlName="direcId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Id sucursal</label>
+                        <input type="text" formControlName="sucurId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+
+
+                    </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button  type="button" *ngIf="addBoton" (click)="addEmpleados()" class="btn btn-primary">Add</button>
+                <button  type="button" *ngIf="updateBoton" (click)="UpdateEmpleados()" class="btn btn-primary">Update</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+

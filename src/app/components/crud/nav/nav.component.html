@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <span>Manteniento</span>
+  <span class="example-spacer"></span>
+  <button mat-button routerLink="clientes">Clientes</button>
+  <!-- <button mat-button routerLink="categoria">Categoria</button> -->
+
+  <button mat-button [matMenuTriggerFor]="Producto">Productos</button>
+  <mat-menu #Producto="matMenu" yPosition="above">
+    <button mat-menu-item >Productos</button>
+    <button mat-menu-item routerLink="productos">Agregar Porductos</button>
+    </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="Reportes">Administracion</button>
+  <mat-menu #Reportes="matMenu" yPosition="above">
+    <button mat-menu-item routerLink="direccion" >Direccion</button>
+    <button mat-menu-item routerLink="sucursales">Sucursales</button>
+    <button mat-menu-item routerLink="empleados" >Empleados</button>
+    <button mat-menu-item routerLink="proveedores">Proveedores</button>
+    <button mat-menu-item>Permisos</button>
+    <button mat-menu-item>Roles</button>
+    <button mat-menu-item routerLink="usuarios">Usuarios</button>
+    <button mat-menu-item>Roles</button>
+  </mat-menu>
+
+
+
+  <span class="example-spacer"></span>
+  <button routerLink="/menu" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>logout</mat-icon>
+  </button>
+
+</mat-toolbar>
+

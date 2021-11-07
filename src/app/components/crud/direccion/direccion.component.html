@@ -1,0 +1,73 @@
+<div class="container">
+  <mat-toolbar>
+    <span>Direccion</span>
+
+    <div class="example-spacer"></div>
+      <button type="button" (click)="Limpiar()" mat-raised-button  color="primary"  data-bs-toggle="modal"  data-bs-target="#exampleModal" >Agregar</button>
+
+
+  </mat-toolbar>
+  <br>
+  <div class="mat-elevation-z3">
+    <table class="table">
+      <thead class="table-block">
+        <tr>
+            <th scope="col" >Id</th>
+            <th scope="col">Departamento</th>
+            <th scope="col">Municipio</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of consulta">
+            <td>{{item.id}}</td>
+            <td>{{item.departamento}}</td>
+            <td>{{item.municipio}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>
+              <button (click)="ListDireccion(item)"   type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-secondary data-bs-target="#exampleModal>Update</button>
+              <button (click)="deleteDireccion(item)" class="btn btn-danger  mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+
+    <!-- Modal -->
+    <div class="mat-elevation-z8">
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >Direccion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formDireccion">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Departamento</label>
+                      <input type="text" formControlName="departamento" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Municipio</label>
+                      <input type="text" formControlName="municipio" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+                      <input type="text" formControlName="descripcion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button  type="button" *ngIf="addBoton" (click)="addDireccion()" class="btn btn-primary">Add</button>
+              <button  type="button" *ngIf="updateBoton" (click)="UpdateDireccion()" class="btn btn-primary">Update</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

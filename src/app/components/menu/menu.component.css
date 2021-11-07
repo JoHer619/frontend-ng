@@ -1,0 +1,127 @@
+.col {
+  word-wrap: break-word;
+  margin: 0px 0px;
+}
+
+.card.shadow-sm {
+  margin: 5px 40px;
+  max-height: 285px;
+}
+
+h1 {
+  font-family: 'Roboto Condensed', Arial, sans-serif;;
+  margin-top: 0.3em;
+  font-size: 50px;
+  -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+  color: transparent;
+  font-weight: bold;
+  text-align: center;
+  font-weight: 1000;
+  letter-spacing: 5px;
+}
+
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.col img {
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+}
+.col img:hover {
+  transition: 0.3s ease-in-out;
+  transform: translate(-2%, -2%);
+  opacity: 0.7;
+}
+
+.col {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+  min-height: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 15px solid rgba(0, 0, 0, 0);
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.col a:hover {
+  color: #ffc400;
+}
+
+.ver-todo {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+  letter-spacing: 5px;
+}
+
+.ver-todo a:hover {
+  color: #ffffff;
+}
+
+.card {
+  padding: 30px;
+  margin: 46px;
+}
+.card img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+}
+.card img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 16px;
+}
+
+.card-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: darkgreen;
+}
+
+
+.btn {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color: hsl(0, 0%, 0%);
+  border-radius: 50px;
+  box-shadow: 0 5px #999;
+  font-weight: bold;
+}
+
+.btn:hover {background-color: #3e8e41}
+
+.btn:active {
+  background-color: #009b05;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+

@@ -1,0 +1,86 @@
+<div class="container">
+  <mat-toolbar>
+    <span>Cliente</span>
+
+    <div class="example-spacer"></div>
+      <button type="button" (click)="Limpiar()" mat-raised-button  color="primary"  data-bs-toggle="modal"  data-bs-target="#exampleModal" >Agregar</button>
+
+
+  </mat-toolbar>
+  <br>
+  <div class="mat-elevation-z3">
+    <table class="table">
+      <thead class="table-block">
+        <tr>
+            <th scope="col" >Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Password</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of consulta">
+            <td>{{item.id}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.apellido}}</td>
+            <td>{{item.correo}}</td>
+            <td>{{item.telefono}}</td>
+            <td>{{item.password}}</td>
+
+            <td>
+              <button (click)="ListClientes(item)"   type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-secondary data-bs-target="#exampleModal>Update</button>
+              <button (click)="deleteClientes(item)" class="btn btn-danger  mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+
+    <!-- Modal -->
+    <div class="mat-elevation-z8">
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >Clientes</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                      <input autocomplete="off" type="text"  formControlName="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Apellido</label>
+                      <input type="text" autocomplete="off"  formControlName="apellido" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Correo</label>
+                      <input type="text" autocomplete="off" formControlName="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Telefono</label>
+                      <input type="text" formControlName="telefono" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Password</label>
+                      <input type="password" formControlName="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off">
+                    </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button  type="button" *ngIf="addBoton" (click)="addClientes()" class="btn btn-primary">Add</button>
+              <button  type="button" *ngIf="updateBoton" (click)="UpdateClientes()" class="btn btn-primary">Update</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

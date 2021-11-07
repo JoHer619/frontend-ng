@@ -1,0 +1,204 @@
+<app-navegacion></app-navegacion>
+<router-outlet></router-outlet>
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+<link href="C:\Users\Joel\Documents\Web\proyectoWeb\FROND-DESARROLLO\assets\dist\css\bootstrap.rtl.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+
+  <div class="album py-1 bg-warning">
+    <div class="container">
+
+      <h1>Categorias</h1>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-1">
+        <div class="col">
+          <div class="card shadow-sm">
+            <a (click)="filter('accesorios')">
+            <img
+            src="https://metasports.com.py/media/Banners/eqp220321.jpg"
+            class="img-responsive"
+            alt=""/>
+            <p>Accesorios</p>
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <a (click)="filter('ropa')">
+            <img
+            src="https://metasports.com.py/media/Banners/app220321.jpg"
+            class="img-responsive"
+            alt=""/>
+            <p>Ropa</p>
+          </a>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <a (click)="filter('zapatos')">
+            <img
+            src="https://metasports.com.py/media/Banners/ftw220321.jpg"
+            class="img-responsive"
+            alt=""/>
+            <p>Zapatos</p>
+          </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ver-todo">
+        <a (click)="filter('')">
+          <div></div>
+          <span>Ver todo</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+    <script src="C:\Users\Joel\Documents\Web\proyectoWeb\FROND-DESARROLLO\assets\dist\js\bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+
+<!-- <div class="card-top container-fluid">
+  <h1>Categorias</h1>
+
+  <div class="container-sm">
+    <div class="row">
+      <div class="col-4">
+        <div class="item">
+          <a (click)="filter('accesorios')">
+            <img
+              src="https://metasports.com.py/media/Banners/eqp220321.jpg"
+              class="img-responsive"
+              alt=""
+            />
+            <span>Accesorios</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="item">
+          <a (click)="filter('ropa')">
+            <img
+              src="https://metasports.com.py/media/Banners/app220321.jpg"
+              class="img-responsive"
+              alt=""
+            />
+            <span>Ropa</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="item">
+          <a (click)="filter('zapatos')">
+            <img
+              src="https://metasports.com.py/media/Banners/ftw220321.jpg"
+              class="img-responsive"
+              alt=""
+            />
+            <span>Zapatos</span>
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="item">
+      <a (click)="filter('accesorios')">
+        <img
+          src="https://metasports.com.py/media/Banners/eqp220321.jpg"
+          class="img-responsive"
+          alt=""
+        />
+        <span>Accesorios</span>
+      </a>
+    </div>
+
+    <span><h1>&nbsp;</h1></span>
+
+    <div class="item">
+      <a (click)="filter('ropa')">
+        <img
+          src="https://metasports.com.py/media/Banners/app220321.jpg"
+          class="img-responsive"
+          alt=""
+        />
+        <span>Ropa</span>
+      </a>
+    </div>
+
+    <span><h1>&nbsp;</h1></span>
+
+    <div class="item">
+      <a (click)="filter('zapatos')">
+        <img
+          src="https://metasports.com.py/media/Banners/ftw220321.jpg"
+          class="img-responsive"
+          alt=""
+        />
+        <span>Zapatos</span>
+      </a>
+    </div> -->
+  <!-- </div> -->
+
+  <!-- <div class="ver-todo">
+    <a (click)="filter('')">
+      <div></div>
+      <span>Ver todo</span>
+    </a>
+  </div>
+</div> -->
+
+<div class="container-sm">
+  <div class="row">
+    <ng-container
+      *ngFor="let item of filterCategory | filter: searchKey:'nombre'"
+    >
+      <div class="card" style="width: 18rem">
+        <img src="{{ item.imagen }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.nombre }}</h5>
+          <p class="card-text">{{ item.descripcion }}</p>
+          <p class="card-price">Q{{ item.precio }}</p>
+          <a (click)="addtocart(item)" class="btn btn-dark"
+            >Añadir al carrito</a
+          >
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<app-footer></app-footer>
