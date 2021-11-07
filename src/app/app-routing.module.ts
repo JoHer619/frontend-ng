@@ -13,6 +13,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { UsuarioComponent } from './components/crud/usuario/usuario.component';
 import { ClienteComponent } from './components/crud/cliente/cliente.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ProductosDesactivadosComponent } from './components/crud/productos-desactivados/productos-desactivados.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'menu', pathMatch: 'full' },
@@ -29,6 +30,8 @@ const routes: Routes = [
     {path: 'proveedores', component: ProveedoresComponent},
     {path: 'usuarios', component: UsuarioComponent},
     {path: 'clientes', component: ClienteComponent},
+    {path: 'prodIna', component: ProductosDesactivadosComponent},
+
   ]
   },
   { path: '**', component: PageNotFoundComponent},

@@ -5,4 +5,5 @@ export class Productos {
   precio?: number;
   imagen?: string;
   categoria?: string;
+  estado?: boolean;
 }
