@@ -12,6 +12,8 @@ import { ProveedoresComponent } from './components/crud/proveedores/proveedores.
 import { CartComponent } from './components/cart/cart.component';
 import { UsuarioComponent } from './components/crud/usuario/usuario.component';
 import { ClienteComponent } from './components/crud/cliente/cliente.component';
+import { ComprasComponent } from './components/crud/compras/compras.component';
+import { RolesComponent } from './components/crud/roles/roles.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -29,6 +31,8 @@ const routes: Routes = [
     {path: 'proveedores', component: ProveedoresComponent},
     {path: 'usuarios', component: UsuarioComponent},
     {path: 'clientes', component: ClienteComponent},
+    {path: 'compras', component: ComprasComponent},
+    {path: 'roles', component: RolesComponent},
   ]
   },
   { path: '**', component: PageNotFoundComponent},
