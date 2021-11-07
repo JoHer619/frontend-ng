@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Empleados } from '../models/empleados.model';
 
-const baseUrlEmpleados ='https://desarroll-web.herokuapp.com/metasports.com/emp';
+const baseUrlEmpleados ='https://desarroll-web.herokuapp.com/metasports.com/empleado';
 
 @Injectable({
   providedIn: 'root',

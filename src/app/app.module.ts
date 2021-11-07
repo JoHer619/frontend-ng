@@ -26,6 +26,8 @@ import { UsuarioComponent } from './components/crud/usuario/usuario.component';
 import { ClienteComponent } from './components/crud/cliente/cliente.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/menu/footer/footer.component';
+import { RolesComponent } from './components/crud/roles/roles.component';
+import { ComprasComponent } from './components/crud/compras/compras.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { FooterComponent } from './components/menu/footer/footer.component';
     UsuarioComponent,
     ClienteComponent,
     PageNotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    RolesComponent,
+    ComprasComponent
 
 
 
