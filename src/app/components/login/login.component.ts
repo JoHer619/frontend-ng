@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   ingresar() {
     this.http
-      .get<any>('http://localhost:3000/metasports.com/user/')
+      .get<any>('https://desarroll-web.herokuapp.com/metasports.com/user')
       .subscribe((res) => {
         const user = res.find((validacion: any) => {
           return (
