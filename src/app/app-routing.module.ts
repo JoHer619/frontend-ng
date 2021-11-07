@@ -14,6 +14,9 @@ import { UsuarioComponent } from './components/crud/usuario/usuario.component';
 import { ClienteComponent } from './components/crud/cliente/cliente.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+
+
+
 const routes: Routes = [
   { path: '', redirectTo: 'menu', pathMatch: 'full' },
   { path: 'menu', component: MenuComponent,children:[

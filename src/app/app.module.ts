@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +19,6 @@ import { ProductosComponent } from './components/crud/productos/productos.compon
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { CartComponent } from './components/cart/cart.component';
-
 import { EmpleadosComponent } from './components/crud/empleados/empleados.component';
 import { ProveedoresComponent } from './components/crud/proveedores/proveedores.component';
 import { UsuarioComponent } from './components/crud/usuario/usuario.component';
@@ -27,6 +26,10 @@ import { ClienteComponent } from './components/crud/cliente/cliente.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/menu/footer/footer.component';
 
+
+import { NgxPayPalModule } from 'ngx-paypal';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -45,13 +48,12 @@ import { FooterComponent } from './components/menu/footer/footer.component';
     FilterPipe,
     CartComponent,
     ProveedoresComponent,
-
     UsuarioComponent,
     ClienteComponent,
     PageNotFoundComponent,
     FooterComponent
 
-
+    
 
   ],
   imports: [
@@ -59,9 +61,13 @@ import { FooterComponent } from './components/menu/footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AngularMaterialModule
+    NgxPayPalModule,
+    AngularMaterialModule,
+    NgxSpinnerModule,
+    NgbModule
   ],
   providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

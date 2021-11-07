@@ -21,10 +21,16 @@ export class CartService {
   }
 
   addtoCart(product : any){
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    console.log(this.cartItemList)
+    
+
+    
+      this.cartItemList.push(product);
+      this.productList.next(this.cartItemList);
+      this.getTotalPrice();
+      console.log(this.cartItemList)
+
+    
+   
   }
 
   getTotalPrice() : number{

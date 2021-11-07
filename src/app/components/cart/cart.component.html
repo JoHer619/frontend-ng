@@ -36,11 +36,63 @@
               <td><button class="btn btn-success">Finalizar compra</button></td>
               <td><strong>Total : Q{{ grandTotal }}</strong></td>
             </tr>
+          
           </tbody>
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
         </table>
+          
       </div>
+    
     </div>
   </div>
+
+  <div >
+        
+  </div>
+
+
+  <div class="container">
+    
+      
+        <div class="form-group">
+          <label for="fecha">Fecha</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fecha"
+            required
+            [(ngModel)]="ordencompra.fecha"
+            name="fecha"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="direId">Direccion</label>
+          <input
+            class="form-control"
+            id="direId"
+            required
+            [(ngModel)]="ordencompra.direId"
+            name="direId"
+          />
+        </div>
+           
+        
+  
+        <button (click)="saveOrdenCompra()" class="btn btn-success">Agregar</button>
+      
+  
+      
+    
+  </div>
+
+
+
+
+
+
+
+
 </ng-container>
 
 <ng-container *ngIf="products.length ==0">
@@ -56,3 +108,7 @@
     </div>
   </div>
 </ng-container>
+
+
+
+
