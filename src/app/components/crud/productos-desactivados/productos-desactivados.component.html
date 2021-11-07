@@ -1,12 +1,6 @@
 <div class="container">
   <mat-toolbar>
     <span>Productos</span>
-
-    <div class="example-spacer"></div>
-    <button type="button" (click)="Limpiar()" mat-raised-button color="primary" data-bs-toggle="modal"
-      data-bs-target="#exampleModal">Agregar</button>
-
-
   </mat-toolbar>
   <br>
   <div class="mat-elevation-z3">
@@ -88,7 +82,6 @@
           </div>
           <div class="modal-footer">
             <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" *ngIf="addBoton" (click)="addProducto()" class="btn btn-primary">Add</button>
             <button type="button" *ngIf="updateBoton valor" (click)="UpdateProducto()"
               class="btn btn-primary">Update</button>
 

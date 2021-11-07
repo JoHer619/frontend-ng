@@ -2,12 +2,16 @@
   <span>Manteniento</span>
   <span class="example-spacer"></span>
   <button mat-button routerLink="clientes">Clientes</button>
+  <button mat-button routerLink="compras" [matMenuTriggerFor]="Compra">Compras</button>
+    <mat-menu #Compra="matMenu" yPosition="above">
+    <button mat-menu-item >Orden de compra</button>
+    <button mat-menu-item >Orden de envio</button>
+    </mat-menu>
   <!-- <button mat-button routerLink="categoria">Categoria</button> -->
 
-  <button mat-button [matMenuTriggerFor]="Producto">Productos</button>
+  <button mat-button routerLink="productos" [matMenuTriggerFor]="Producto">Productos</button>
   <mat-menu #Producto="matMenu" yPosition="above">
-    <button mat-menu-item >Productos</button>
-    <button mat-menu-item routerLink="productos">Agregar Porductos</button>
+    <button mat-menu-item routerLink="prodIna">Inactivos</button>
     </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="Reportes">Administracion</button>
@@ -16,10 +20,8 @@
     <button mat-menu-item routerLink="sucursales">Sucursales</button>
     <button mat-menu-item routerLink="empleados" >Empleados</button>
     <button mat-menu-item routerLink="proveedores">Proveedores</button>
-    <button mat-menu-item>Permisos</button>
-    <button mat-menu-item>Roles</button>
     <button mat-menu-item routerLink="usuarios">Usuarios</button>
-    <button mat-menu-item>Roles</button>
+    <button mat-menu-item routerLink="roles">Roles</button>
   </mat-menu>
 
 

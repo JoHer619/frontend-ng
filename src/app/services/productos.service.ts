@@ -14,19 +14,23 @@ export class ProductosService {
 
   constructor(private http: HttpClient) {}
 
-  ////////////////////////////
+
   getProduct() {
     return this.http.get<any>(baseUrlproductos)
     .pipe(map((res: any) => {
         return res;
     }));
   }
-  ///////////////////////////////
+
 
 
   //CATEGORIA
   getAll(): Observable<Productos[]> {
     return this.http.get<Productos[]>(baseUrlproductos);
+  }
+
+  getAllInactivos(): Observable<Productos[]> {
+    return this.http.get<Productos[]>(`${baseUrlproductos}/productoIna`);
   }
 
   get(id: any): Observable<Productos> {

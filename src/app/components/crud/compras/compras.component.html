@@ -1,0 +1,88 @@
+<div class="container">
+  <mat-toolbar>
+    <span>Compras</span>
+
+    <div class="example-spacer"></div>
+      <button type="button" (click)="Limpiar()" mat-raised-button  color="primary"  data-bs-toggle="modal"  data-bs-target="#exampleModal" >Agregar</button>
+
+
+  </mat-toolbar>
+  <br>
+  <div class="mat-elevation-z3">
+    <table class="table">
+      <thead class="table-block">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Id producto</th>
+            <th scope="col">Id proveedor</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of consulta">
+            <td>{{item.id}}</td>
+            <td>{{item.cantidad}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.precioCompra}}</td>
+            <td>{{item.produId}}</td>
+            <td>{{item.provId}}</td>
+
+            <td>
+              <button (click)="ListCompras(item)"   type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-secondary data-bs-target="#exampleModal>Update</button>
+              <button (click)="deleteCompras(item)" class="btn btn-danger  mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+
+      <!-- Modal -->
+      <div class="mat-elevation-z8">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form [formGroup]="form">
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Cantidad</label>
+                        <input type="text" formControlName="cantidad" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Fecha</label>
+                        <input type="text" formControlName="fecha" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Precio</label>
+                        <input type="text" formControlName="precioCompra" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Id producto</label>
+                        <input type="text" formControlName="produId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Id proveedor</label>
+                        <input type="text" formControlName="provId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                    </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button  type="button" *ngIf="addBoton" (click)="addCompras()" class="btn btn-primary">Add</button>
+                <button  type="button" *ngIf="updateBoton" (click)="UpdateCompras()" class="btn btn-primary">Update</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+

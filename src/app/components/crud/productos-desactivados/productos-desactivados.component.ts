@@ -4,11 +4,11 @@ import { ProductosService } from 'src/app/services/productos.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css'],
+  selector: 'app-productos-desactivados',
+  templateUrl: './productos-desactivados.component.html',
+  styleUrls: ['./productos-desactivados.component.css']
 })
-export class ProductosComponent implements OnInit {
+export class ProductosDesactivadosComponent implements OnInit {
 
   producto: Productos = {
     nombre: '',
@@ -16,7 +16,6 @@ export class ProductosComponent implements OnInit {
     precio: 0,
     imagen: '',
     categoria: '',
-    estado: true,
   };
 
   consulta?: Productos[];
@@ -26,7 +25,10 @@ export class ProductosComponent implements OnInit {
   //desabilitar Formulario
   addBoton!: boolean;
   updateBoton!: boolean;
-  valor!: boolean;
+  valor !: boolean;
+
+
+
 
   constructor(private formulario: FormBuilder, private productosService: ProductosService) { }
 
@@ -44,9 +46,8 @@ export class ProductosComponent implements OnInit {
     this.getProducto();
   }
 
-
   getProducto() {
-    this.productosService.getAll().subscribe(
+    this.productosService.getAllInactivos().subscribe(
       (data) => {
         this.consulta = data;
         console.log(data);
@@ -57,27 +58,6 @@ export class ProductosComponent implements OnInit {
     );
   }
 
-  addProducto(): void {
-    this.producto.nombre = this.formProducto.value.nombre;
-    this.producto.descripcion = this.formProducto.value.descripcion;
-    this.producto.precio = this.formProducto.value.precio;
-    this.producto.imagen = this.formProducto.value.imagen;
-    this.producto.categoria = this.formProducto.value.categoria;
-
-    this.productosService.create(this.producto).subscribe(
-      (res) => {
-        console.log(res);
-        alert('Registrado');
-        this.formProducto.reset();
-        let ref = document.getElementById('cancel');
-        ref?.click();
-        this.getProducto();
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
 
 
   deleteProductos(row: any): void {
@@ -137,6 +117,7 @@ export class ProductosComponent implements OnInit {
     this.updateBoton = false;
     this.valor=false;
   }
+
 
 
 }
